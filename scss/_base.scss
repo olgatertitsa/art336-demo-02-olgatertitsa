@@ -13,10 +13,23 @@ body {
     width: 100%;
 }
 
+main, footer[role="contentinfo"] {
+    padding: 0 10px;
+}
+
 img {
     height: auto;
     max-width: 100%;
     ///margin:0
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+figcaption {
+    @include fontSize(14px);
 }
 
 //Start nav styling
@@ -64,9 +77,37 @@ h1, h2, h3 {
     @include headline-font;
 }
 
+header h1 {
+    @include fontSize(175px);
+    margin: 0;
+}
+
 article h1 {
     color: $color-title;
     @include fontSize(66px);
     margin: 48px 0 48px;
     text-transform: capitalize;
+}
+
+article div {
+    color: $color-title;
+    @include fontSize(50px);
+    @include body-font-bold;
+    margin:30px 0;
+}
+
+main footer {
+//footer[role="complementary"]
+    border-bottom: 1px #989898 solid;
+    border-top: 1px #989898 solid;
+    color: #989898;
+    margin: 40px 0;
+    padding:10px 0;
+}
+
+footer[role="contentinfo"] small {
+    display: block; // had to do this because small is an inline element//
+    border-top: 1px #989898 solid;
+    @include fontSize(16px);
+    margin-bottom: 20px;
 }
