@@ -62,8 +62,9 @@ h2, h3 {
 }
 
 header h1 {
-    @include fontSize(50px);
+    @include fontSize(60px);
     margin: 0;
+    line-height: 1.5;
 }
 
 article h1 {
