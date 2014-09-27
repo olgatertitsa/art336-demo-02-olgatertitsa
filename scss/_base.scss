@@ -9,7 +9,7 @@ body {
     @include fontSize(18px);
     line-height: 1.4;
     margin: 0 auto; /*margin on the top is 0, left and right its automatic*/
-    max-width: 550px;
+    max-width: 650px;
     width: 100%;
 }
 
@@ -17,10 +17,16 @@ main, footer[role="contentinfo"] {
     padding: 0 10px;
 }
 
+header[role="banner"]{
+    margin-bottom: 50px;
+    margin-left: 10px;
+}
+
 img {
     height: auto;
     max-width: 100%;
-    ///margin:0
+    margin:0;
+    padding: 0;
 }
 
 figure {
@@ -30,55 +36,33 @@ figure {
 
 figcaption {
     @include fontSize(14px);
-}
-
-//Start nav styling
-nav {
-    background-color: #fff;
-    border: 1px solid $background-color;
-    //border-radius: 6px;//
-    border-bottom-left-radius: 6px;
-    border-bottom-right-radius: 6px;
-    border-top: none;
-    margin-left: 10px;
-    padding: 4px 10px 6px 10px;
-    position: fixed;
-}
-
-nav ul {
-    list-style-type: none;
-    margin:0;
-    padding:0;
-}
-
-nav ul li {
-    display: inline-block; /* so we can display inline, but use block properties so that it responds to margin*/
-    margin: 0 6px 0 0;
-    padding: 0;
-}
-
-nav ul li:last-of-type {
-    margin-right: 0;
+    background-color: $background-color;
+    padding: 8px;
+    margin: 0;
 }
 
 a {
-    color: $color;
+    color: $linkcolor;
     @include body-font-bold;
     transition: color 350ms linear;
+    text-decoration: none;
 }
 
 a:hover {
-    color: lighten($color,40%);
+    color: lighten($linkcolor,30%);
     transition: color 300ms linear;   
 }
-//End nav styling
 
-h1, h2, h3 {
-    @include headline-font;
+h1, {
+   @include headline-font; 
+}
+h2, h3 {
+    @include body-font-bold;
+    margin-bottom: -10px;
 }
 
 header h1 {
-    @include fontSize(175px);
+    @include fontSize(50px);
     margin: 0;
 }
 
@@ -96,18 +80,8 @@ article div {
     margin:30px 0;
 }
 
-main footer {
-//footer[role="complementary"]
-    border-bottom: 1px #989898 solid;
-    border-top: 1px #989898 solid;
-    color: #989898;
-    margin: 40px 0;
-    padding:10px 0;
-}
-
-footer[role="contentinfo"] small {
-    display: block; // had to do this because small is an inline element//
-    border-top: 1px #989898 solid;
-    @include fontSize(16px);
-    margin-bottom: 20px;
+#headerinfo {
+    @include fontSize(12px);
+    color: lighten($linkcolor,20%);
+    margin-bottom: 12;
 }
